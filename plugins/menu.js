@@ -43,7 +43,7 @@ const defaultMenu = {
 │ 🕰️ Waktu: *%time*
 │
 │ 📈 Uptime: *%uptime (%muptime)*
-│ 📊 Database: %rtotalreg of %totalreg
+│
 ╰────
 %readmore`.trimStart(),
   header: '╭─「 %category 」',
@@ -151,7 +151,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
     const pp = await conn.profilePictureUrl(conn.user.jid).catch(_ => './src/avatar_contact.png')
-    conn.sendHydrated(m.chat, text.trim(), author, pp, 'https://github.com/BochilGaming/games-wabot', 'Github', null, null, [
+    conn.sendHydrated(m.chat, text.trim(), author, pp, 'https://github.com/APTXmrnn/games-wabot', 'Github', null, null, [
       ['Donate', '/donasi'],
       ['Speed', '/ping'],
       ['Owner', '/owner']
